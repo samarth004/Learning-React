@@ -10,7 +10,7 @@ function App() {
   const [todos, setTodos] = useState([])
 
   const addTodo = (todo ) => {
-  setTodos((prev) => [{id : Date.now, ...todo}, ...prev])
+  setTodos((prev) => [{id : Date.now(), ...todo}, ...prev])
   }
 
   const updateTodo = (todo,id ) =>{
@@ -28,7 +28,7 @@ function App() {
   }
 
   useEffect(() => {
-    const todos = JSON.parse(localStorage.getItem("todod"))
+    const todos = JSON.parse(localStorage.getItem("todos"))
 
     if (todos && todos.length > 0) {
       setTodos(todos)
